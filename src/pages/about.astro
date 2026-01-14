@@ -1,12 +1,67 @@
-<body>
- <a href="/">Home</a>
- <a href="/about/">About</a>
- <a href="/blog/">Blog</a>
-  <h1>My Astro Site</h1>
-  <h1>About Me</h1>
-  <h2>... and my new Astro site!</h2>
+---
+const pageTitle = "About Me";
 
-  <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself!</p>
+const identity = {
+  name: "astauf",
+  role: "MUSA Student",
+  location: "U.S. East Coast",
+  hobbies: ["singing", "language learning 你好", "playing card games", "petting cats"]
+};
 
-  <p>This site will update as I complete more of the tutorial, so keep checking back and see how my journey is going!</p>
-</body>
+const skills = [
+  "HTML/CSS",
+  "ArcGis Pro",
+  "Python",
+  "JavaScript (in progress)",
+  "SQL (in progress)",
+  "Astro (in progress)"
+];
+
+const happy = true;
+const finished = false;
+const goal = 3;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{pageTitle}</title>
+  </head>
+  <body>
+    <a href="/">Home</a>
+    <a href="/about/">About</a>
+    <a href="/blog/">Blog</a>
+    <h1>{pageTitle}</h1>
+    <h2>... and my new Astro site!</h2>
+
+    <p>I am working through Astro's introductory tutorial. This is the second page on my website, and it's the first one I built myself (I kind of copy-pasted mostly)</p>
+
+    <p>This site will update as I complete more of the tutorial!</p>
+  </body>
+</html>
+
+
+<p>Here is a little about me:</p>
+<ul>
+    <li>My name is {identity.name}.</li>
+    <li>I am a {identity.role}.</li>
+    <li>I live in {identity.location}.</li>
+    {identity.hobbies.length >= 2 &&
+    <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
+  }
+</ul>
+<p>Here are some of my skills:</p>
+<ul>
+  {skills.map((skill) => (
+    <li>{skill}</li>
+  ))}
+</ul>
+
+
+{happy && <p>I am happy to be learning Astro!</p>}
+
+{!happy && <p>I do not know Javascript.</p>}
+
+{!finished && <p>I am still working on the Astro tutorial.</p>}
+
+{goal === 3 ? <p>I am on goal 3 of the Astro tutorial.</p> : <p>I have not reached goal 3 yet.</p>}
