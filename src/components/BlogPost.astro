@@ -1,5 +1,52 @@
 ---
-const {title, url} = Astro.props;
+// BlogCard.astro
+interface Props {
+  url: string;
+  title: string;
+  description?: string;
+  date?: string;
+  tags?: string[];
+}
+
+const { url, title, description, date, tags } = Astro.props;
 ---
 
-<li><a href={url}>{title}</a></li>
+<a href={url} class="block no-underline">
+  <article class="blog-card group">
+    <div class="flex flex-col gap-3">
+      <!-- Date Badge -->
+      {date && (
+        <time class="text-sm text-purple-600 dark:text-purple-400 font-medium">
+          {new Date(date).toLocaleDateString('en-US', { 
+            year: 'numeric', 
+            month: 'long', 
+            day: 'numeric' 
+          })}
+        </time>
+      )}
+      
+      <!-- Title -->
+      <h3 class="text-xl font-bold m-0 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+        {title}
+      </h3>
+      
+      <!-- Description -->
+      {description && (
+        <p class="text-gray-600 dark:text-gray-400 m-0 line-clamp-2">
+          {description}
+        </p>
+      )}
+      
+      <!-- Tags -->
+      {tags && tags.length > 0 && (
+        <div class="flex flex-wrap gap-2 mt-2">
+          {tags.map(tag => (
+            <span class="px-2 py-1 text-xs font-medium rounded-full bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
+    </div>
+  </article>
+</a>

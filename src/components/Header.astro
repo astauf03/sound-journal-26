@@ -4,43 +4,15 @@ import Menu from "./Menu.astro";
 import ThemeIcon from "./ThemeIcon.astro";
 ---
 <header class="site-header">
-  <nav class="site-nav">
+  <div class="inner">
     <div class="left">
       <ThemeIcon />
       <Menu />
     </div>
-    <Navigation />
-  </nav>
+
+    <nav class="nav-links" aria-label="Primary">
+      <Navigation />
+    </nav>
+  </div>
 </header>
 
-<style>
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: inherit;
-    padding-top: 0.25rem;
-    border-bottom: 1px solid rgba(167, 139, 250, 0.35); /* soft purple */
-  }
-
-  .site-nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    border-bottom: 2px solid #a78bfa;
-  }
-
-  .left {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  @media (min-width: 636px) {
-    .site-nav {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-</style>
