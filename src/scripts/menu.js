@@ -1,3 +1,4 @@
+console.log("menu.js loaded");
 const menu = document.querySelector('.menu');
 
 menu?.addEventListener('click', () => {
