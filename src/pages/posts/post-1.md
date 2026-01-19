@@ -1,16 +1,14 @@
 ---
-title: 'My First Post'
-pubDate: '2026-01-15'
-description: 'This is the first post to my new Astro Blog!'
+layout: ../../layouts/MarkdownPostLayout.astro
+title: 'My First Blog Post'
+pubDate: 2026-01-15
+description: 'First time user!'
 author: 'astauf'
 image:
     url: 'https://docs.astro.build/assets/rose.webp'
     alt: 'The Astro logo on a dark background with a pink glow.'
 tags: ['astro', 'blog', 'first-post']
 ---
-# My First Blog Post
-
-Published on January 15, 2026
 
 Welcome to my _new blog_ powered by Astro! This is my first post, and I'm excited to try something new.
 

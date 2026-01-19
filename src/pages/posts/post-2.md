@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: My Second Blog Post
 author: astauf
 description: "After learning some Astro, I couldn't stop!"
@@ -8,9 +9,6 @@ image:
 pubDate: 2022-07-08
 tags: ["astro", "blogging", "learning in public", "successes"]
 ---
-# My First Blog Post
-
-Published on January 14, 2026
 
 ## Progress
 Still learning more about CSS. Also I am probably going to finish this tutorial all in one day, sorry to disappoint. 
