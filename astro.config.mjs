@@ -5,6 +5,6 @@ import preact from "@astrojs/preact";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://superb-cascaron-2d453b.netlify.app/",
-  integrations: [preact()]
+  site: "https://astauf03.github.io/",
+  base: "/tutorial"
 });
